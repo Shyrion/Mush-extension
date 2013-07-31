@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+
+  "name": "Ki k'ay pray ?",
+  "description": "Script pour savoir qui est prêt dans le casting",
+  "version": "1.0",
+
+  "permissions": [
+    "tabs"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://mush.vg/g/anonymush",
+        "http://mush.vg/g/anonymush/center"
+      ],
+      "js": ["kikaypray.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "page_action": {
+    "default_icon": "icon.png",
+    "default_title": ":)",
+    "default_popup": "popup.html"
+  }
+}
