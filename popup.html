@@ -5,15 +5,36 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="popupStyle.css" rel="stylesheet" type="text/css">
 
     <strong>Envoyer un message :</strong>
 
-    <a id="everybody" href="#">Tout le monde</a>
-    <a id="ready" href="#">Prêts seulement</a>
-    <a id="notReady" href="#">Pas prêts seulement</a>
-    <a id="inGame" href="#">En voyage seulement</a>
 
+    <div>
+      <div>
+        <input id="check1" class="checkbox" type="checkbox" name="userGroup" value="everybody" />
+        <label for="check1">Tout le monde</label>
+      </div>
+      
+      <div>
+        <input id="check2"class="checkbox" type="checkbox" name="userGroup" value="ready" />
+        <label for="check2">Prêts</label>
+      </div>
+      
+      <div>
+        <input id="check3" class="checkbox" type="checkbox" name="userGroup" value="notReady" />
+        <label for="check3">Pas prêts</label>
+      </div>
+      
+      <div>
+        <input id="check4" class="checkbox" type="checkbox" name="userGroup" value="inGame" />
+        <label for="check4">En voyage</label>
+      </div>
+
+      <input id="sendButton" type="button" value="Envoyer" />
+
+      <input id="getListButton" type="button" value="Liste" />
+    </div>
 
     <script src="popup.js"></script>
   </body>

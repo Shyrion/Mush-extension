@@ -10,26 +10,3 @@
 	border: solid 2px black;
 	padding: 5px;
 }
-
-a
-{
-	display: block;
-	color: #444;
-	font-weight: bold;
-}
-
-html
-{
-	padding: 0px;
-}
-
-body
-{
-	background: lightgrey;
-
-	border: solid black 2px;
-
-	width: 160px;
-	height: 100px;
-	padding: 5px;
-}

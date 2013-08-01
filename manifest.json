@@ -16,7 +16,7 @@
         "http://mush.vg/g/anonymush/center"
       ],
       "js": ["kikaypray.js"],
-      "run_at": "document_end"
+      "css": ["style.css"]
     }
   ],
 
