@@ -1,16 +1,17 @@
 <!doctype html>
 <html>
   <head>
+    <script src="jquery-2.0.3.js"></script>
     <title>Board</title>
     <meta charset="utf-8">
   </head>
   <body>
     <link href="popupStyle.css" rel="stylesheet" type="text/css">
 
-    <strong>Envoyer un message :</strong>
+    <div class="groupDiv">
 
+      <h2 class="groupTitle">Envoyer un message :</h2>
 
-    <div>
       <div>
         <input id="check1" class="checkbox" type="checkbox" name="userGroup" value="everybody" />
         <label for="check1">Tout le monde</label>
@@ -30,10 +31,22 @@
         <input id="check4" class="checkbox" type="checkbox" name="userGroup" value="inGame" />
         <label for="check4">En voyage</label>
       </div>
+      
+      <div>
+        <input id="check5" class="checkbox" type="checkbox" name="userGroup" value="onHoliday" />
+        <label for="check5">En vacances</label>
+      </div>
 
       <input id="sendButton" type="button" value="Envoyer" />
+    </div>
+
+    <div class="groupDiv">
+
+      <h2 class="groupTitle">Zone test</h2>
 
       <input id="getListButton" type="button" value="Liste" />
+
+      <input id="getHolidayButton" type="button" value="Vacances" />
     </div>
 
     <script src="popup.js"></script>

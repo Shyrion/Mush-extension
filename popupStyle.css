@@ -11,11 +11,22 @@
 	padding: 5px;
 }
 
-a
+.groupDiv
 {
-	display: block;
-	color: #444;
-	font-weight: bold;
+
+	border: solid black 2px;
+
+	margin: 5px 0px;
+	padding: 3px;
+
+}
+
+.groupTitle
+{
+	font-size: 12pt;
+
+	padding: 0px;
+	margin: 2px 0px;
 }
 
 html
@@ -27,9 +38,9 @@ body
 {
 	background: lightgrey;
 
-	border: solid black 2px;
+	font-size: 10pt;
 
-	width: 160px;
-	height: 140px;
-	padding: 5px;
+	width: 180px;
+	height: 200px;
+	padding: 2px;
 }

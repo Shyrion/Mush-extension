@@ -27,7 +27,10 @@ arrayize(document.querySelectorAll('input:not([value="everybody"])')).forEach(fu
 	}
 });
 
-// When click on send, send a message to the content script
+//=================//
+//== Send button ==//
+//=================//
+
 document.querySelector('#sendButton').onclick = function() {
 	var allInputs = arrayize(document.querySelectorAll('.checkbox'));
 
@@ -43,7 +46,11 @@ document.querySelector('#sendButton').onclick = function() {
 	});
 }
 
-// When click on getList, send a message to the content script
+
+//=====================//
+//== Get List button ==//
+//=====================//
+
 document.querySelector('#getListButton').onclick = function() {
 	var allInputs = arrayize(document.querySelectorAll('.checkbox'));
 

@@ -1,12 +1,14 @@
 {
   "manifest_version": 2,
 
-  "name": "Ki k'ay pray ?",
-  "description": "Script pour savoir qui est prêt dans le casting",
+  "name": "Mush Toolbox",
+  "description": "Extension dédiée à l'organisation au sein de casting mush",
   "version": "1.0",
 
   "permissions": [
-    "tabs"
+    "tabs",
+    "http://mush.vg/*",
+    "http://twinoid.com/*"
   ],
 
   "content_scripts": [
