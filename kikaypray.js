@@ -84,27 +84,36 @@ function getPeopleOnHoliday(onFinished) {
 
 			var data = parseForumForHoliday(xmlDoc);
 
-			var today = new Date();
-			data.forEach(function(userAndDate) {
-				/*if (userAndDate.date.start < today) {
-					if (userAndDate.date.end && today < userAndDate.date.end) {
-						userAndDate.users.forEach(function(user) {
-							peopleCurrentlyInHoliday.push(user.id);
-						})
-					}
-				}*/
-				userAndDate.users.forEach(function(user) {
+			function pushToArray(usersId) {
+				usersId.forEach(function(user) {
 					peopleCurrentlyInHoliday.push(user.id);
 				})
+			}
+
+			var today = new Date((new Date()).setHours(0, 0, 0, 0));
+			data.forEach(function(userAndDate) {
+				if (userAndDate.date.start <= today) {
+					if (!userAndDate.date.end) {
+						// Only 1 day holliday, should match today's date
+						if (userAndDate.date.start.getTime() == today.getTime()) {
+							pushToArray(userAndDate.users);
+						}
+					} else {
+						// several days holliday, should be in between
+						if (today < userAndDate.date.end) {
+							pushToArray(userAndDate.users);
+						}
+					}
+				}
 			})
 
 
-			httpRequest.open("GET","http://twinoid.com/mod/forum/thread/27790688?_id=tid_forum;jsm=1;lang=fr;host=mush.vg;sid=p9vrYZ7BRNGmNPmoBlWrXd3LtuHdMjhr;p="+nextPage,true);
+			httpRequest.open("GET","http://twinoid.com/mod/forum/thread/28236915?_id=tid_forum;jsm=1;lang=fr;host=mush.vg;sid=p9vrYZ7BRNGmNPmoBlWrXd3LtuHdMjhr;p="+nextPage,true);
 			httpRequest.send();
 		}
 	}
 	
-	httpRequest.open("GET","http://twinoid.com/mod/forum/thread/27790688?_id=tid_forum;jsm=1;lang=fr;host=mush.vg;sid=p9vrYZ7BRNGmNPmoBlWrXd3LtuHdMjhr;p=1",true);
+	httpRequest.open("GET","http://twinoid.com/mod/forum/thread/28236915?_id=tid_forum;jsm=1;lang=fr;host=mush.vg;sid=p9vrYZ7BRNGmNPmoBlWrXd3LtuHdMjhr;p=1",true);
 	httpRequest.send();
 
 	// TODO : deal with pages
@@ -120,7 +129,7 @@ function parseForumForHoliday(xmlDoc) {
 
 		var today = new Date();
 
-		var year = (dateSplit.length > 2) ? dateSplit[2] : today.getYear();
+		var year = (dateSplit.length > 2) ? dateSplit[2] : today.getFullYear();
 		var month =  (dateSplit.length > 1) ? dateSplit[1] : today.getMonth();
 		var day =  (dateSplit.length > 0) ? dateSplit[0] : today.getDate();
 
